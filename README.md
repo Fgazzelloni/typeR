@@ -11,7 +11,7 @@ To install the development version of `typeR` from GitHub, use:
 install.packages("devtools")
 
 # Install typeR from GitHub
-devtools::install_github("yourusername/typeR")
+devtools::install_github("fgazzelloni/typeR")
 ```
 
 ## Usage
