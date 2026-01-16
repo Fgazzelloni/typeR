@@ -1,0 +1,6 @@
+pandoc: 3.1.11
+pkgdown: 2.2.0
+pkgdown_sha: ~
+articles:
+  setup: setup.html
+last_built: 2026-01-16T18:58Z
