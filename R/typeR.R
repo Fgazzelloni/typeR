@@ -1,27 +1,25 @@
-#' Simulate Typing of R Scripts
+#' Simulate Typing of an R Script File
 #'
-#' Simulates typing out the contents of an R script file, character by character,
-#' to create a "typing" animation effect.
+#' Simulates typing out the content of an R script file, line by line,
+#' character by character, to create an animation effect for live coding
+#' presentations or educational demonstrations.
 #'
 #' @param file Path to the R script file to simulate typing.
-#' @param delay The delay (in seconds) between typing each character. Default is 0.05 seconds.
+#' @param delay The delay (in seconds) between typing each character (default: 0.05).
 #' @export
 #'
 #' @examples
 #' # Simulate typing of a script
 #' # typeR("example_script.R", delay = 0.1)
 typeR <- function(file, delay = 0.05) {
-  # Read the R script file into a vector of lines
-  lines <- readLines(file)
-
-  # Function to simulate typing with a delay
-  for (line in lines) {
-    cat("", sep = "")
-    for (char in strsplit(line, NULL)[[1]]) {
-      cat(char)
-      Sys.sleep(delay)  # Adjust the delay for typing speed
-    }
-    cat("\n")
+  if (!file.exists(file)) {
+    stop("The file does not exist. Please provide a valid file path.")
   }
 
+  # Read file contents
+  lines <- readLines(file)
+
+  # Call the internal function to simulate typing
+  .simulate_typing(lines, delay)
 }
+

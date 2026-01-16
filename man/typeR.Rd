@@ -2,18 +2,19 @@
 % Please edit documentation in R/typeR.R
 \name{typeR}
 \alias{typeR}
-\title{Simulate Typing of R Scripts}
+\title{Simulate Typing of an R Script File}
 \usage{
 typeR(file, delay = 0.05)
 }
 \arguments{
 \item{file}{Path to the R script file to simulate typing.}
 
-\item{delay}{The delay (in seconds) between typing each character. Default is 0.05 seconds.}
+\item{delay}{The delay (in seconds) between typing each character (default: 0.05).}
 }
 \description{
-Simulates typing out the contents of an R script file, character by character,
-to create a "typing" animation effect.
+Simulates typing out the content of an R script file, line by line,
+character by character, to create an animation effect for live coding
+presentations or educational demonstrations.
 }
 \examples{
 # Simulate typing of a script
