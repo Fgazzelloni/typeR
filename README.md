@@ -1,4 +1,4 @@
-# typeR
+# typeR <a href='https://fgazzelloni.github.io/typeR/'><img src='man/figures/logo.png' align="right" width="25%" min-width="120px" /></a>
 
 `typeR` is an R package that simulates typing effects on R script files, making it ideal for live coding presentations, interactive teaching, or creating animations.
 
