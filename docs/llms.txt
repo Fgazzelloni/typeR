@@ -1,0 +1,64 @@
+# typeR
+
+`typeR` is an R package that simulates typing effects on R script files,
+making it ideal for live coding presentations, interactive teaching, or
+creating animations.
+
+## Installation
+
+To install the development version of `typeR` from GitHub, use:
+
+``` r
+# Install devtools if you don't already have it
+install.packages("devtools")
+
+# Install typeR from GitHub
+devtools::install_github("fgazzelloni/typeR")
+```
+
+## Usage
+
+Here’s an example of how to use the `typeR` package:
+
+``` r
+library(typeR)
+
+# Create a test script for demonstration
+writeLines(c(
+  "# Testing typeR",
+  "x <- 1:10",
+  "y <- x*2",
+  "plot(x, y)"
+), "test_script.R")
+
+# Simulate typing the script
+typeR("test_script.R", delay = 0.05)
+```
+
+## Features
+
+- Simulates the typing of R script files line by line.
+- Adjustable typing speed using the `delay` parameter.
+- Creates engaging live coding demonstrations.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull
+request.
+
+## License
+
+This package is licensed under the MIT License. See the
+[LICENSE](./LICENSE) file for details.
+
+# Package index
+
+## All functions
+
+- [`typeR()`](typeR.md) : Simulate Typing of an R Script File
+
+# Articles
+
+### All vignettes
+
+- [Getting Started with typeR](setup.md):

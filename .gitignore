@@ -8,5 +8,4 @@ inst/doc
 **/.quarto/
 /doc/
 /Meta/
-docs
 R/internal_helper.R
