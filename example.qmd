@@ -1,0 +1,25 @@
+# Distributions in R
+
+- Normal
+- Poisson
+- Binomial vs Poisson
+
+## Learning Objectives
+
+- Understand R's distribution function convention
+d*, p*, q*, r*
+- Compute PDF/PMF, CDF and quantiles for Normal and Poisson distributions
+- Simulate values and run basic reasonableness checks (mean/sd for Normal, mean/variance for Poisson)
+- Distinguish Binomial vs Poisson
+
+R uses a consistent naming convention across distributions:
+
+```{r}
+# ddist
+dnorm()
+
+```
+
+`dnorm` returns density (continuous) or probability mass (discrete)
+
+
