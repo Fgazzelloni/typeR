@@ -5,3 +5,9 @@
 ^vignettes/*_files$
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
+^doc$
+^Meta$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
