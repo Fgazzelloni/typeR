@@ -1,6 +1,8 @@
 # typeR
 
 [![R-CMD-check](https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/typeR)](https://CRAN.R-project.org/package=typeR)
 
 `typeR` is an R package that simulates typing effects on R script files,
 making it ideal for live coding presentations, interactive teaching, or
