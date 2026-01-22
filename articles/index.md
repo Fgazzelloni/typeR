@@ -2,4 +2,5 @@
 
 ### All vignettes
 
-- [Getting Started with typeR](setup.md):
+- [Getting Started with
+  typeR](https://fgazzelloni.github.io/typeR/articles/setup.md):

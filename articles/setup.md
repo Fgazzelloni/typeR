@@ -50,8 +50,9 @@ practice.
 
 ### Example with a custom R script
 
-The [`typeR()`](../reference/typeR.md) function can simulate typing an R
-script line by line in the R console. Here’s a basic example:
+The [`typeR()`](https://fgazzelloni.github.io/typeR/reference/typeR.md)
+function can simulate typing an R script line by line in the R console.
+Here’s a basic example:
 
 ``` r
 library(typeR)
@@ -84,7 +85,8 @@ available parameters and their usage.
 Now that you’re up and running with **typeR**, here are a few
 suggestions for further learning:
 
-- Explore the package documentation: [`?typeR`](../reference/typeR.md)
+- Explore the package documentation:
+  [`?typeR`](https://fgazzelloni.github.io/typeR/reference/typeR.md)
 - Check out the other vignettes or tutorials on advanced topics.
 - Contribute or share your feature ideas via [GitHub Issues
   link](https://github.com/Fgazzelloni/typeR/issues).
