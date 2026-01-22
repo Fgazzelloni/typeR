@@ -22,4 +22,3 @@ typeR <- function(file, delay = 0.05) {
   # Call the internal function to simulate typing
   .simulate_typing(lines, delay)
 }
-

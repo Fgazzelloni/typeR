@@ -1,5 +1,7 @@
 # typeR
 
+[![R-CMD-check](https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml)
+
 `typeR` is an R package that simulates typing effects on R script files,
 making it ideal for live coding presentations, interactive teaching, or
 creating animations.
@@ -49,4 +51,4 @@ request.
 ## License
 
 This package is licensed under the MIT License. See the
-[LICENSE](./LICENSE) file for details.
+[LICENSE](https://fgazzelloni.github.io/typeR/LICENSE) file for details.
