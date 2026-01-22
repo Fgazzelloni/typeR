@@ -73,14 +73,25 @@
     fun <- if (is_call) as.character(expr[[1]]) else ""
     is_plot <- is_call && fun %in% plotting_funs
 
+    # Check if it's a library/require call
+    is_library <- is_call && fun %in% c("library", "require")
+
     if (is_plot || .skip_output(expr, in_chunk)) {
       try(eval(expr, envir = envir), silent = TRUE)
       next
     }
 
+    # Suppress messages from library() calls
+    if (is_library) {
+      suppressPackageStartupMessages(
+        try(eval(expr, envir = envir), silent = TRUE)
+      )
+      next
+    }
+
     vis <- try(withVisible(eval(expr, envir = envir)), silent = TRUE)
     if (inherits(vis, "try-error")) {
-      cat("Error: ", conditionMessage(attr(vis, "condition")), "\n", sep = "")
+      cat("Error:  ", conditionMessage(attr(vis, "condition")), "\n", sep = "")
       next
     }
     if (isTRUE(vis$visible)) .print_truncated(vis$value, max_print = max_print)
