@@ -1,7 +1,7 @@
 # Type and Run R Code with Live Evaluation
 
 An enhanced version of
-[`typeR`](https://fgazzelloni.github.io/typeR/reference/typeR.md) that
+[`typeR`](https://Fgazzelloni.github.io/typeR/reference/typeR.md) that
 not only simulates typing but also evaluates R code in real-time.
 Supports interactive pause/resume control and handles both Quarto/R
 Markdown documents and plain R scripts.
@@ -22,7 +22,7 @@ typeRun(
 
 - file:
 
-  Character string. Path to an R script (. R), R Markdown (. Rmd), or
+  Character string. Path to an R script (.R), R Markdown (.Rmd), or
   Quarto (.qmd) file to type and execute.
 
 - delay:
@@ -53,7 +53,7 @@ code evaluation).
 ## Details
 
 `typeRun()` extends the basic
-[`typeR()`](https://fgazzelloni.github.io/typeR/reference/typeR.md)
+[`typeR()`](https://Fgazzelloni.github.io/typeR/reference/typeR.md)
 functionality by:
 
 - **Live Code Evaluation:** Executes R code chunks as they are typed
@@ -61,8 +61,8 @@ functionality by:
 - **Interactive Control:** Press ESC/Ctrl+C to pause, then choose to
   resume or stop
 
-- **Smart Output:** Truncates long outputs and provides summaries for
-  models
+- **Smart Output:** Truncates long outputs and handles models
+  intelligently
 
 - **Format Support:** Handles .R, .Rmd, and .qmd files intelligently
 
@@ -82,7 +82,12 @@ For R scripts, it evaluates all non-comment, non-empty lines.
 
 - Long vectors/data frames are truncated to `max_print` elements
 
-- Linear models show a compact summary instead of full output
+- Model summaries (lm, glm, etc.) display using R's standard print
+  methods
+
+- Raw model objects (without summary call) show a simple fitted message
+
+- Package loading messages (library/require) are suppressed
 
 - Errors are caught and displayed without stopping execution
 
@@ -98,7 +103,7 @@ During execution, you can:
 
 ## See also
 
-[`typeR`](https://fgazzelloni.github.io/typeR/reference/typeR.md) for
+[`typeR`](https://Fgazzelloni.github.io/typeR/reference/typeR.md) for
 typing without evaluation
 
 ## Examples

@@ -7,11 +7,11 @@ demonstrations.
 
 Useful links:
 
-- <https://fgazzelloni.github.io/typeR>
+- <https://Fgazzelloni.github.io/typeR/>
 
-- <https://github.com/fgazzelloni/typeR>
+- <https://github.com/Fgazzelloni/typeR>
 
-- Report bugs at <https://github.com/fgazzelloni/typeR/issues>
+- Report bugs at <https://github.com/Fgazzelloni/typeR/issues>
 
 ## Author
 
