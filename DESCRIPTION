@@ -6,14 +6,18 @@ Authors@R:
 Description: A package to simulate typing of R script files for presentations and demonstrations.
 License: MIT + file LICENSE
 Encoding: UTF-8
-URL: https://fgazzelloni.github.io/typeR, https://github.com/fgazzelloni/typeR
-BugReports: https://github.com/fgazzelloni/typeR/issues
+URL: https://Fgazzelloni.github.io/typeR/, https://github.com/Fgazzelloni/typeR
+BugReports: https://github.com/Fgazzelloni/typeR/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-VignetteBuilder: knitr, quarto
+VignetteBuilder: knitr
 Suggests: 
     quarto,
     testthat (>= 3.0.0),
     knitr,
     rmarkdown
 Config/testthat/edition: 3
+Imports: 
+    stats,
+    utils
+Language: en-US

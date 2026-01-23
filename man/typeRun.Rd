@@ -13,7 +13,7 @@ typeRun(
 )
 }
 \arguments{
-\item{file}{Character string. Path to an R script (. R), R Markdown (. Rmd), or
+\item{file}{Character string. Path to an R script (.R), R Markdown (.Rmd), or
 Quarto (.qmd) file to type and execute.}
 
 \item{delay}{Numeric. Base delay in seconds between typing each character.
@@ -25,7 +25,7 @@ adding natural typing rhythm. Default is 0.01.}
 \item{max_print}{Integer. Maximum number of elements to print for long outputs
 (vectors, data frames, matrices, lists). Default is 10.}
 
-\item{envir}{Environment.  The environment in which to evaluate R code.
+\item{envir}{Environment. The environment in which to evaluate R code.
 Default is a new environment with the global environment as parent.}
 }
 \value{
@@ -42,7 +42,7 @@ both Quarto/R Markdown documents and plain R scripts.
 \itemize{
 \item \strong{Live Code Evaluation: } Executes R code chunks as they are typed
 \item \strong{Interactive Control:} Press ESC/Ctrl+C to pause, then choose to resume or stop
-\item \strong{Smart Output:} Truncates long outputs and provides summaries for models
+\item \strong{Smart Output:} Truncates long outputs and handles models intelligently
 \item \strong{Format Support:} Handles .R, .Rmd, and .qmd files intelligently
 }
 
@@ -60,7 +60,9 @@ For R scripts, it evaluates all non-comment, non-empty lines.
 \itemize{
 \item Assignments and plotting functions execute silently
 \item Long vectors/data frames are truncated to \code{max_print} elements
-\item Linear models show a compact summary instead of full output
+\item Model summaries (lm, glm, etc.) display using R's standard print methods
+\item Raw model objects (without summary call) show a simple fitted message
+\item Package loading messages (library/require) are suppressed
 \item Errors are caught and displayed without stopping execution
 }
 }

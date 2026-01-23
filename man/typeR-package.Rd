@@ -12,9 +12,9 @@ A package to simulate typing of R script files for presentations and demonstrati
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://fgazzelloni.github.io/typeR}
-  \item \url{https://github.com/fgazzelloni/typeR}
-  \item Report bugs at \url{https://github.com/fgazzelloni/typeR/issues}
+  \item \url{https://Fgazzelloni.github.io/typeR/}
+  \item \url{https://github.com/Fgazzelloni/typeR}
+  \item Report bugs at \url{https://github.com/Fgazzelloni/typeR/issues}
 }
 
 }

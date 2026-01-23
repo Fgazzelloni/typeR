@@ -1,4 +1,48 @@
-url: https://fgazzelloni.github.io/typeR/
+url: https://Fgazzelloni.github.io/typeR/
+
 template:
   bootstrap: 5
+  bootswatch: flatly  # Optional: nice theme
 
+home:
+  title: typeR - Typing Animation for R Code
+  description: >
+    Simulate typing animation for R scripts, R Markdown, and Quarto documents
+    with optional live code execution.
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, news]
+    right: [search, github]
+  components:
+    articles:
+      text: Articles
+      menu:
+      - text: Getting Started
+        href: articles/setup.html
+      - text: Live Code Execution
+        href: articles/typerun-demo.html
+
+reference:
+  - title: Main Functions
+    desc: Core functionality for typing animation
+    contents:
+    - typeR
+    - typeRun
+
+articles:
+  - title: Getting Started
+    navbar: ~
+    contents:
+    - getting-started
+  - title: Advanced Usage
+    navbar: ~
+    contents:
+    - typerun-demo
+
+news:
+  releases:
+  - text: "Version 0.2.0"
+    href: https://github.com/Fgazzelloni/typeR/releases/tag/v0.2.0
+  - text: "Version 0.1.0"
+    href: https://github.com/Fgazzelloni/typeR/releases/tag/v0.1.0

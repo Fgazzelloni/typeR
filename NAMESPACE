@@ -2,7 +2,3 @@
 
 export(typeR)
 export(typeRun)
-importFrom(stats,coef)
-importFrom(stats,rnorm)
-importFrom(utils,flush.console)
-importFrom(utils,head)

@@ -1,6 +1,11 @@
 # Articles
 
-### All vignettes
+### Getting Started
 
 - [Getting Started with
-  typeR](https://fgazzelloni.github.io/typeR/articles/setup.md):
+  typeR](https://Fgazzelloni.github.io/typeR/articles/getting-started.md):
+
+### Advanced Usage
+
+- [Live Code Execution with
+  typeRun](https://Fgazzelloni.github.io/typeR/articles/typerun-demo.md):

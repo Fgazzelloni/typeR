@@ -15,8 +15,8 @@
     chars <- strsplit(line, "", fixed = TRUE)[[1]]
     for (ch in chars) {
       cat(ch)
-      flush.console()
-      Sys.sleep(max(0, delay + stats:: rnorm(1, 0, jitter)))
+      utils::flush.console()
+      Sys.sleep(max(0, delay + stats::rnorm(1, 0, jitter)))
     }
     if (isTRUE(newline)) cat("\n")
   }

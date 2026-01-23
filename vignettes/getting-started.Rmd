@@ -75,6 +75,15 @@ And here’s what the output looks like:
 
 ![typeR demo](images/typeR_demo.gif){width="600px" height="400px"}
 
+## New in Version 0.2.0: typeRun()
+
+For live code execution with typing animation, see the dedicated vignette:
+
+```{r eval=FALSE}
+vignette("typerun-demo", package = "typeR")
+```
+
+This vignette covers how to use the `typeRun()` function, which types out and executes R code in real-time.
 
 Check out the function reference documentation for details on the available parameters and their usage.
 

@@ -19,15 +19,17 @@
 #' @noRd
 #' @keywords internal
 .print_truncated <- function(val, max_print = 10) {
-  if (inherits(val, "lm") && !inherits(val, "summary.lm")) {
-    cat("<lm model fitted>\n")
+  # Handle raw model objects (not summaries)
+  if (inherits(val, c("lm", "glm", "nls", "gam", "lme", "lmer", "glmer")) &&
+      !any(grepl("^summary\\.", class(val)))) {
+    cat(sprintf("<%s model fitted>\n", class(val)[1]))
     return(invisible(NULL))
   }
 
-  if (inherits(val, "summary.lm")) {
-    cat("Model Summary (truncated):\n")
-    print(coef(val))
-    cat(sprintf("R-squared:  %.4f\n", val$r.squared))
+  # Handle summary objects - MUST come before is.list() check!
+  # Summary objects are lists internally but have nice print methods
+  if (any(grepl("^summary\\.", class(val)))) {
+    print(val)
     return(invisible(NULL))
   }
 
@@ -46,7 +48,7 @@
     if (length(val) > max_print)
       return(trunc_msg(sprintf("...  [%d elements truncated]", length(val))))
   } else if (is.list(val) && length(val) > 0) {
-    print(utils:: head(val, max_print))
+    print(utils::head(val, max_print))
     if (length(val) > max_print)
       return(trunc_msg(sprintf("... [%d items truncated]", length(val))))
   } else {

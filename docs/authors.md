@@ -7,15 +7,15 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/fgazzelloni/typeR/blob/HEAD/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/Fgazzelloni/typeR/blob/HEAD/DESCRIPTION)
 
 Gazzelloni F (2026). *typeR: Simulate Typing Script*. R package version
-0.2.0, <https://fgazzelloni.github.io/typeR>.
+0.2.0, <https://Fgazzelloni.github.io/typeR/>.
 
     @Manual{,
       title = {typeR: Simulate Typing Script},
       author = {Federica Gazzelloni},
       year = {2026},
       note = {R package version 0.2.0},
-      url = {https://fgazzelloni.github.io/typeR},
+      url = {https://Fgazzelloni.github.io/typeR/},
     }

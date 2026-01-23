@@ -51,4 +51,4 @@ request.
 ## License
 
 This package is licensed under the MIT License. See the
-[LICENSE](https://fgazzelloni.github.io/typeR/LICENSE) file for details.
+[LICENSE](https://Fgazzelloni.github.io/typeR/LICENSE) file for details.

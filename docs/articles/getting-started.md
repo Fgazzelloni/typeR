@@ -50,7 +50,7 @@ practice.
 
 ### Example with a custom R script
 
-The [`typeR()`](https://fgazzelloni.github.io/typeR/reference/typeR.md)
+The [`typeR()`](https://Fgazzelloni.github.io/typeR/reference/typeR.md)
 function can simulate typing an R script line by line in the R console.
 Here’s a basic example:
 
@@ -75,6 +75,19 @@ And here’s what the output looks like:
 
 typeR demo
 
+### New in Version 0.2.0: typeRun()
+
+For live code execution with typing animation, see the dedicated
+vignette:
+
+``` r
+vignette("typerun-demo", package = "typeR")
+```
+
+This vignette covers how to use the
+[`typeRun()`](https://Fgazzelloni.github.io/typeR/reference/typeRun.md)
+function, which types out and executes R code in real-time.
+
 Check out the function reference documentation for details on the
 available parameters and their usage.
 
@@ -86,7 +99,7 @@ Now that you’re up and running with **typeR**, here are a few
 suggestions for further learning:
 
 - Explore the package documentation:
-  [`?typeR`](https://fgazzelloni.github.io/typeR/reference/typeR.md)
+  [`?typeR`](https://Fgazzelloni.github.io/typeR/reference/typeR.md)
 - Check out the other vignettes or tutorials on advanced topics.
 - Contribute or share your feature ideas via [GitHub Issues
   link](https://github.com/Fgazzelloni/typeR/issues).
