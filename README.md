@@ -1,4 +1,4 @@
-# typeR <a href='https://Fgazzelloni.github.io/typeR//'><img src='man/figures/logo.png' align="right" width="25%" min-width="120px" /></a>
+# typeR <a href='https://Fgazzelloni.github.io/typeR'><img src='man/figures/logo.png' align="right" width="25%" min-width="120px" /></a>
 
 [![R-CMD-check](https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml)
 
@@ -15,7 +15,7 @@ To install the development version of `typeR` from GitHub, use:
 install.packages("devtools")
 
 # Install typeR from GitHub
-devtools::install_github("fgazzelloni/typeR")
+devtools::install_github("Fgazzelloni/typeR")
 ```
 
 ## Usage
