@@ -6,7 +6,7 @@
 #' Internal helper used by typeR() and typeRun()
 #' @noRd
 #' @keywords internal
-.simulate_typing <- function(text, delay = 0.05, jitter = 0.9, newline = TRUE) {
+.simulate_typing <- function(text, delay = 0.05, jitter = 0.01, newline = TRUE) {
   # Accept a single string or a character vector of lines
   if (length(text) == 0) return(invisible(NULL))
   lines <- as.character(text)
