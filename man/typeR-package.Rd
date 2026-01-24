@@ -7,7 +7,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-A package to simulate typing of R script files for presentations and demonstrations.
+Simulates typing of R script files for presentations and demonstrations. Provides character-by-character animation with optional live code execution. Supports R scripts (.R), R Markdown (.Rmd), and Quarto (.qmd) documents.
 }
 \seealso{
 Useful links:

@@ -3,7 +3,9 @@ Title: Simulate Typing Script
 Version: 0.2.0
 Authors@R: 
     person("Federica", "Gazzelloni", , "fede.gazzelloni@gmail.com", role = c("aut", "cre"))
-Description: A package to simulate typing of R script files for presentations and demonstrations.
+Description: Simulates typing of R script files for presentations and demonstrations.
+    Provides character-by-character animation with optional live code execution.
+    Supports R scripts (.R), R Markdown (.Rmd), and Quarto (.qmd) documents.
 License: MIT + file LICENSE
 Encoding: UTF-8
 URL: https://Fgazzelloni.github.io/typeR/, https://github.com/Fgazzelloni/typeR
