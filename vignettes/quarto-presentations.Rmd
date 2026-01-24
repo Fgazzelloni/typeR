@@ -278,7 +278,7 @@ for (demo in demos) {
 - **Don't** type too fast - audience needs time to read
 - **Don't** show massive outputs - use head() or sample()
 - **Don't** skip testing - always do a dry run
-- **Don't** forget** ESC pauses if you need to stop
+- **Don't forget** ESC pauses if you need to stop
 
 ## Troubleshooting
 
