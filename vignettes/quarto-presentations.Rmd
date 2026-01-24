@@ -1,0 +1,370 @@
+---
+title: "Using typeR with Quarto Presentations"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using typeR with Quarto Presentations}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE
+)
+```
+
+```{r setup}
+library(typeR)
+```
+
+## Overview
+
+The typeR package provides excellent support for **Quarto presentations**, allowing you to create engaging live coding demonstrations for:
+
+- 🎓 **Teaching** - Show students how code is written step-by-step
+- 🎤 **Conference talks** - Demonstrate concepts with live coding effects
+- 📹 **Tutorial videos** - Record professional coding tutorials
+- 👥 **Workshops** - Engage audiences with interactive demonstrations
+
+## Quick Start
+
+### 1. Create a Quarto Presentation
+
+First, create a Quarto presentation file with reveal.js format:
+
+```yaml
+---
+title: "My R Demo"
+format: revealjs
+---
+
+## Slide 1
+
+```{r}
+x <- 1:10
+mean(x)
+```
+
+## Slide 2
+
+```{r}
+plot(x, x^2)
+```
+```
+
+Save this as `my-demo.qmd`.
+
+### 2. Run with typeRun()
+
+```{r}
+# Basic usage
+typeRun("my-demo.qmd")
+
+# With custom settings
+typeRun("my-demo.qmd", delay = 0.08, jitter = 0.02)
+```
+
+**What happens:**
+- YAML header is skipped automatically
+- Slide dividers (`##`) are typed out
+- R code chunks execute in real-time
+- Narrative text types without executing
+
+## Included Examples
+
+The package includes ready-to-use Quarto presentation examples:
+
+```{r examples}
+# Find the example file
+demo_file <- system.file("examples/demo-presentation.qmd", package = "typeR")
+
+# Run it
+typeRun(demo_file)
+
+# Or the simpler version
+simple_file <- system.file("examples/simple-presentation.qmd", package = "typeR")
+typeRun(simple_file, delay = 0.05)
+```
+
+## Supported Quarto Formats
+
+typeR works with various Quarto presentation formats:
+
+### reveal.js (Default)
+
+```yaml
+format: revealjs
+```
+
+Most popular format for HTML presentations. Supports themes, transitions, and interactive features.
+
+### PowerPoint
+
+```yaml
+format: pptx
+```
+
+While the typing effect works during development, the final PowerPoint won't show animation.
+
+### Beamer (PDF)
+
+```yaml
+format: beamer
+```
+
+LaTeX-based PDF slides. typeRun() helps during development to test code.
+
+## Best Practices
+
+### 1. Adjust Typing Speed
+
+For presentations, slower typing is often better:
+
+```{r speed}
+# Slower for readability
+typeRun("presentation.qmd", delay = 0.10, jitter = 0.03)
+
+# Very slow for teaching
+typeRun("presentation.qmd", delay = 0.15, jitter = 0.05)
+
+# Fast for quick demos
+typeRun("presentation.qmd", delay = 0.03, jitter = 0.01)
+```
+
+### 2. Control Output Length
+
+Prevent long outputs from scrolling off screen:
+
+```{r output}
+# Limit to 5 lines
+typeRun("presentation.qmd", max_print = 5)
+
+# Show more for detailed examples
+typeRun("presentation.qmd", max_print = 15)
+```
+
+### 3. Use Interactive Pause
+
+During live presentations, pause to answer questions:
+
+```{r pause, eval=FALSE}
+typeRun("presentation.qmd")
+# Press ESC to pause
+# Enter 1 to resume
+# Enter 2 to stop
+```
+
+### 4. Test Before Presenting
+
+Always do a full run-through before your actual presentation:
+
+```{r test}
+# Full test run
+typeRun("my-talk.qmd", delay = 0.05)
+
+# Check for errors or unexpected output
+```
+
+## Example: Full Presentation Workflow
+
+### Step 1: Create Content
+
+```yaml
+---
+title: "Data Analysis in R"
+format: 
+  revealjs:
+    theme: moon
+    transition: slide
+---
+
+## Introduction
+
+Today we'll analyze the mtcars dataset.
+
+## Load Data
+
+```{r}
+data(mtcars)
+head(mtcars, 3)
+```
+
+## Summary Statistics
+
+```{r}
+summary(mtcars$mpg)
+```
+
+## Visualization
+
+```{r}
+plot(mtcars$wt, mtcars$mpg,
+     xlab = "Weight", ylab = "MPG",
+     main = "Fuel Efficiency vs Weight")
+```
+
+## Model
+
+```{r}
+model <- lm(mpg ~ wt, data = mtcars)
+summary(model)
+```
+
+## Thank You!
+```
+
+### Step 2: Practice
+
+```{r practice}
+# Save the above as "data-analysis.qmd"
+typeRun("data-analysis.qmd", delay = 0.06, max_print = 8)
+```
+
+### Step 3: Present Live
+
+During your presentation:
+
+1. Open R/RStudio
+2. Load typeR: `library(typeR)`
+3. Run: `typeRun("data-analysis.qmd", delay = 0.08)`
+4. Let the code type out automatically
+5. Use ESC to pause for questions
+
+## Advanced Features
+
+### Custom Environment
+
+Keep your workspace clean by using a separate environment:
+
+```{r env}
+# Create isolated environment
+demo_env <- new.env()
+
+# Run presentation in that environment
+typeRun("presentation.qmd", envir = demo_env)
+
+# Your global environment remains clean
+ls()  # Nothing added here
+ls(demo_env)  # All demo objects here
+```
+
+### Combining Multiple Presentations
+
+```{r multiple}
+# Run a series of short demos
+demos <- c("intro.qmd", "advanced.qmd", "qa.qmd")
+
+for (demo in demos) {
+  cat("\n\n=== Starting:", demo, "===\n\n")
+  typeRun(demo, delay = 0.06)
+  cat("\n\n=== Finished:", demo, "===\n\n")
+}
+```
+
+## Tips for Success
+
+### Do's ✅
+
+- **Practice** your presentation multiple times
+- **Adjust delay** to match your speaking pace
+- **Use max_print** to avoid overwhelming output
+- **Test plots** to ensure they display correctly
+- **Prepare backup** - have slides ready if tech fails
+
+### Don'ts ❌
+
+- **Don't** type too fast - audience needs time to read
+- **Don't** show massive outputs - use head() or sample()
+- **Don't** skip testing - always do a dry run
+- **Don't** forget** ESC pauses if you need to stop
+
+## Troubleshooting
+
+### Issue: Code types too fast
+
+**Solution:** Increase the delay parameter
+
+```{r}
+typeRun("presentation.qmd", delay = 0.12)
+```
+
+### Issue: Output is too long
+
+**Solution:** Use max_print or modify your code to show less
+
+```{r}
+typeRun("presentation.qmd", max_print = 5)
+```
+
+### Issue: Need to stop mid-presentation
+
+**Solution:** Press ESC, then choose option 2
+
+### Issue: Plots don't display
+
+**Solution:** Make sure your graphics device is open and functioning
+
+```{r}
+# Test graphics device
+plot(1:10)  # Should work before starting typeRun
+```
+
+## Real-World Use Cases
+
+### Teaching a Course
+
+```{r teaching}
+# Week 1: Basics
+typeRun("week1-intro.qmd", delay = 0.10)
+
+# Week 2: Data manipulation
+typeRun("week2-dplyr.qmd", delay = 0.08)
+
+# Week 3: Visualization
+typeRun("week3-ggplot.qmd", delay = 0.08)
+```
+
+### Conference Talk
+
+```{r conference}
+# 20-minute presentation
+typeRun("conference-talk.qmd", 
+        delay = 0.06,     # Fast enough to keep pace
+        max_print = 6)    # Brief outputs
+```
+
+### Workshop
+
+```{r workshop}
+# Interactive 2-hour workshop
+typeRun("workshop-morning.qmd",
+        delay = 0.09,      # Slower for learning
+        max_print = 8)
+
+# Break, then afternoon session
+typeRun("workshop-afternoon.qmd",
+        delay = 0.09,
+        max_print = 8)
+```
+
+## Getting Help
+
+- **Documentation:** See `?typeRun` for all parameters
+- **Examples:** Check `inst/examples/` directory
+- **Issues:** Report bugs at https://github.com/Fgazzelloni/typeR/issues
+- **Community:** Share your presentations using #typeR
+
+## Conclusion
+
+typeR makes Quarto presentations more engaging and professional. The combination of:
+
+- ✨ **Visual appeal** - Typing animation catches attention
+- 🎯 **Educational value** - Shows code construction process
+- 💪 **Flexibility** - Works with any Quarto format
+- 🛠️ **Ease of use** - Just one function call
+
+Makes it an excellent tool for anyone presenting R code.
+
+Happy presenting! 🎉

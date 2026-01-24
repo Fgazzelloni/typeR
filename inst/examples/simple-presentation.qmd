@@ -1,0 +1,26 @@
+---
+title: "Quick Demo"
+format: 
+  revealjs:
+    theme: simple
+---
+
+## Slide 1: Basic R
+
+```{r}
+# Simple calculations
+x <- 1:5
+x
+mean(x)
+```
+
+## Slide 2: Plot
+
+```{r}
+# Create visualization
+plot(1:10, (1:10)^2, type = "b")
+```
+
+## Slide 3: Done!
+
+Thank you for watching!
