@@ -1,0 +1,87 @@
+---
+title: "Live Coding with typeR"
+subtitle: "Interactive Demonstrations for Presentations"
+author: "Your Name"
+format: 
+  revealjs:
+    theme: default
+    transition: slide
+    incremental: false
+---
+
+## Introduction
+
+Welcome to this live coding demonstration!
+
+::: {.notes}
+This presentation demonstrates how typeR works with Quarto reveal.js presentations.
+:::
+
+## Simple Data Analysis
+
+```{r}
+# Create sample data
+x <- 1:10
+y <- x * 2
+
+# Calculate summary statistics
+mean(x)
+sum(y)
+```
+
+## Visualization
+
+```{r}
+# Create a simple plot
+plot(x, y, 
+     main = "Linear Relationship",
+     xlab = "X values", 
+     ylab = "Y values",
+     pch = 19, 
+     col = "steelblue")
+
+# Add a line
+abline(lm(y ~ x), col = "red", lwd = 2)
+```
+
+## Working with Data Frames
+
+```{r}
+# Load built-in dataset
+data(mtcars)
+
+# Show structure
+str(mtcars)
+
+# Basic summary
+summary(mtcars$mpg)
+```
+
+## Statistical Analysis
+
+```{r}
+# Fit a linear model
+model <- lm(mpg ~ wt + hp, data = mtcars)
+
+# View the summary
+summary(model)
+```
+
+## Data Manipulation
+
+```{r}
+# Filter high efficiency cars
+efficient_cars <- mtcars[mtcars$mpg > 25, ]
+
+# Show results
+head(efficient_cars)
+```
+
+## Thank You!
+
+Questions?
+
+::: {.notes}
+This slide deck can be used with typeRun() to create live coding demonstrations
+in Quarto presentations.
+:::
