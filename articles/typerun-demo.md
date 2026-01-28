@@ -51,8 +51,6 @@ typeRun("demo.R")
 # Output: Shows code typing + execution results
 ```
 
-------------------------------------------------------------------------
-
 ## Customizing the Experience
 
 ### Control Typing Speed
@@ -86,8 +84,6 @@ big_df
 # Show only first 5 elements/rows
 typeRun("long_output.R", max_print = 5)
 ```
-
-------------------------------------------------------------------------
 
 ## Working with Models
 
@@ -126,8 +122,6 @@ summary(pois_model)
 typeRun("glm_demo.R")
 ```
 
-------------------------------------------------------------------------
-
 ## Interactive Control
 
 ### Pause and Resume
@@ -149,8 +143,6 @@ typeRun("long_script.R")
 This is perfect for: - Answering questions during presentations -
 Explaining specific code sections - Debugging during demonstrations
 
-------------------------------------------------------------------------
-
 ## Working with R Markdown and Quarto
 
 ### R Markdown Files
@@ -160,46 +152,19 @@ intelligently handles `.Rmd` files:
 
 ``` r
 # Create an R Markdown example
-cat('---
-title: "Analysis Report"
----
-
-# Introduction
-
-This is narrative text (won\'t execute).
+typeRun("report.Rmd")
 ```
+
+**Behavior:** - ✅ Types and shows all text - ✅ Executes only R code
+chunks - ✅ Skips YAML headers - ✅ Preserves narrative flow
+
+### Quarto Documents
+
+Works identically with `.qmd` files:
 
 ``` r
-# This R code will execute
-x <- 1:10
-mean(x)
+typeRun("analysis.qmd")
 ```
-
-More text here.
-
-``` r
-plot(x, x^2)
-```
-
-’, file = “report.Rmd”)
-
-typeRun(“report.Rmd”)
-
-    **Behavior:**
-    - ✅ Types and shows all text
-    - ✅ Executes only R code chunks
-    - ✅ Skips YAML headers
-    - ✅ Preserves narrative flow
-
-    ### Quarto Documents
-
-    Works identically with `.qmd` files:
-
-
-    ``` r
-    typeRun("analysis.qmd")
-
-------------------------------------------------------------------------
 
 ## Advanced Features
 
