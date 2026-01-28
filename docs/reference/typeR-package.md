@@ -1,7 +1,9 @@
 # typeR: Simulate Typing Script
 
-A package to simulate typing of R script files for presentations and
-demonstrations.
+Simulates typing of R script files for presentations and demonstrations.
+Provides character-by-character animation with optional live code
+execution. Supports R scripts (.R), R Markdown (.Rmd), and Quarto (.qmd)
+documents.
 
 ## See also
 

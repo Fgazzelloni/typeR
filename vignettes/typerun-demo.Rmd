@@ -63,7 +63,6 @@ typeRun("demo.R")
 # Output: Shows code typing + execution results
 ```
 
----
 
 ## Customizing the Experience
 
@@ -100,7 +99,6 @@ big_df
 typeRun("long_output.R", max_print = 5)
 ```
 
----
 
 ## Working with Models
 
@@ -138,7 +136,6 @@ summary(pois_model)
 typeRun("glm_demo.R")
 ```
 
----
 
 ## Interactive Control
 
@@ -163,7 +160,7 @@ This is perfect for:
 - Explaining specific code sections
 - Debugging during demonstrations
 
----
+
 
 ## Working with R Markdown and Quarto
 
@@ -171,29 +168,8 @@ This is perfect for:
 
 `typeRun()` intelligently handles `.Rmd` files:
 
-```{r rmd, eval=FALSE}
+```{r}
 # Create an R Markdown example
-cat('---
-title: "Analysis Report"
----
-
-# Introduction
-
-This is narrative text (won\'t execute).
-
-```{r}
-# This R code will execute
-x <- 1:10
-mean(x)
-```
-
-More text here.
-
-```{r}
-plot(x, x^2)
-```
-', file = "report.Rmd")
-
 typeRun("report.Rmd")
 ```
 
@@ -211,7 +187,7 @@ Works identically with `.qmd` files:
 typeRun("analysis.qmd")
 ```
 
----
+
 
 ## Advanced Features
 

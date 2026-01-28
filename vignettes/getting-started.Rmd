@@ -1,7 +1,5 @@
 ---
 title: "Getting Started with typeR"
-author: "Federica Gazzelloni"
-date: "2026/01/16"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Getting Started with typeR}
@@ -9,7 +7,16 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-# Introduction
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE  # Don't actually run typeRun in vignette
+)
+```
+
+## Introduction
 
 Welcome to the **typeR** package! 
 
@@ -17,19 +24,19 @@ In this vignette, you'll learn how to install the package, what it’s designed 
 
 This package is designed to simulate typing effects in R scripts for presentations and tutorials.
 
----
 
 ## Installation
 
 If you haven’t already, you can install the package. As soon as it becomes available on CRAN:
 
-```R
+```{r}
 install.packages("typeR")
 ```
 
+
 Install the development version on GitHub:
 
-```R
+```{r}
 # Install devtools package if not already installed
 if (!requireNamespace("devtools", quietly = TRUE)) {
   install.packages("devtools")
@@ -41,21 +48,20 @@ devtools::install_github("fgazzelloni/typeR")
 
 After installation, load the package:
 
-```R
+```{r}
 library(typeR)
 ```
 
----
 
-# Quick Start Example
+## Quick Start Example
 
 Let’s dive into a simple example to show you how **typeR** works in practice.
 
-## Example with a custom R script
+### Example with a custom R script
 
 The `typeR()` function can simulate typing an R script line by line in the R console. Here’s a basic example:
 
-```R
+```{r}
 library(typeR)
 
 # Create a test script for demonstration
@@ -87,7 +93,6 @@ This vignette covers how to use the `typeRun()` function, which types out and ex
 
 Check out the function reference documentation for details on the available parameters and their usage.
 
----
 
 ## Next Steps
 
@@ -97,7 +102,7 @@ Now that you're up and running with **typeR**, here are a few suggestions for fu
 - Check out the other vignettes or tutorials on advanced topics.
 - Contribute or share your feature ideas via [GitHub Issues link](https://github.com/Fgazzelloni/typeR/issues).
 
----
+
 
 ## Credits
 

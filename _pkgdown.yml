@@ -19,7 +19,7 @@ navbar:
       text: Articles
       menu:
       - text: Getting Started
-        href: articles/setup.html
+        href: articles/getting-started.html
       - text: Live Code Execution
         href: articles/typerun-demo.html
 

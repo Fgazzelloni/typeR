@@ -12,9 +12,7 @@ the right foot.
 This package is designed to simulate typing effects in R scripts for
 presentations and tutorials.
 
-------------------------------------------------------------------------
-
-### Installation
+## Installation
 
 If you haven’t already, you can install the package. As soon as it
 becomes available on CRAN:
@@ -40,8 +38,6 @@ After installation, load the package:
 ``` r
 library(typeR)
 ```
-
-------------------------------------------------------------------------
 
 ## Quick Start Example
 
@@ -75,7 +71,7 @@ And here’s what the output looks like:
 
 typeR demo
 
-### New in Version 0.2.0: typeRun()
+## New in Version 0.2.0: typeRun()
 
 For live code execution with typing animation, see the dedicated
 vignette:
@@ -91,9 +87,7 @@ function, which types out and executes R code in real-time.
 Check out the function reference documentation for details on the
 available parameters and their usage.
 
-------------------------------------------------------------------------
-
-### Next Steps
+## Next Steps
 
 Now that you’re up and running with **typeR**, here are a few
 suggestions for further learning:
@@ -104,9 +98,7 @@ suggestions for further learning:
 - Contribute or share your feature ideas via [GitHub Issues
   link](https://github.com/Fgazzelloni/typeR/issues).
 
-------------------------------------------------------------------------
-
-### Credits
+## Credits
 
 Thanks for using the **typeR** package! Feedback and contributions are
 always welcome. If you encounter any issues or have suggestions, feel
