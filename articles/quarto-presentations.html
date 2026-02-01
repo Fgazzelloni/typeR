@@ -105,46 +105,52 @@ demonstrations</li>
 <div class="section level3">
 <h3 id="create-a-quarto-presentation">1. Create a Quarto Presentation<a class="anchor" aria-label="anchor" href="#create-a-quarto-presentation"></a>
 </h3>
-<p>First, create a Quarto presentation file with reveal.js format:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My R Demo"</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="pp">---</span></span>
+<p>First, create a Quarto presentation file with <code>reveal.js</code>
+format:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># ---</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># title: "My R Demo"</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># format: revealjs</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># ---</span></span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">## Slide 1</span></span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="at">``` r</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="at">x &lt;- 1:10</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="at">mean(x)</span></span></code></pre></div>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co"># ```{r}</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co"># x &lt;- 1:10</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co"># mean(x)</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co"># ```</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">## Slide 2</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co"># ```{r}</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co"># plot(x, x^2)</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co"># ```</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co"># </span></span></code></pre></div>
+<p>Save this as <code>my-demo.qmd</code>.</p>
 </div>
-</div>
-<div class="section level2">
-<h2 id="slide-2">Slide 2<a class="anchor" aria-label="anchor" href="#slide-2"></a>
-</h2>
+<div class="section level3">
+<h3 id="run-with-typerun">2. Run with typeRun()<a class="anchor" aria-label="anchor" href="#run-with-typerun"></a>
+</h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">x</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<pre><code>
-Save this as `my-demo.qmd`.
-
-### 2. Run with typeRun()
-
-
-``` r
-# Basic usage
-typeRun("my-demo.qmd")
-
-# With custom settings
-typeRun("my-demo.qmd", delay = 0.08, jitter = 0.02)</code></pre>
-<p><strong>What happens:</strong> - YAML header is skipped automatically
-- Slide dividers (<code>##</code>) are typed out - R code chunks execute
-in real-time - Narrative text types without executing</p>
+<code class="sourceCode R"><span><span class="co"># Basic usage</span></span>
+<span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"my-demo.qmd"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># With custom settings</span></span>
+<span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"my-demo.qmd"</span>, delay <span class="op">=</span> <span class="fl">0.08</span>, jitter <span class="op">=</span> <span class="fl">0.02</span><span class="op">)</span></span></code></pre></div>
+<p><strong>What happens:</strong></p>
+<ul>
+<li>YAML header is skipped automatically</li>
+<li>Slide dividers (<code>##</code>) are typed out</li>
+<li>R code chunks execute in real-time</li>
+<li>Narrative text types without executing</li>
+</ul>
+</div>
 </div>
 <div class="section level2">
 <h2 id="included-examples">Included Examples<a class="anchor" aria-label="anchor" href="#included-examples"></a>
 </h2>
 <p>The package includes ready-to-use Quarto presentation examples:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Find the example file</span></span>
 <span><span class="va">demo_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/demo-presentation.qmd"</span>, package <span class="op">=</span> <span class="st">"typeR"</span><span class="op">)</span></span>
 <span></span>
@@ -152,33 +158,35 @@ in real-time - Narrative text types without executing</p>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="va">demo_file</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Or the simpler version</span></span>
-<span><span class="va">simple_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/simple-presentation.qmd"</span>, package <span class="op">=</span> <span class="st">"typeR"</span><span class="op">)</span></span>
+<span><span class="va">simple_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/simple-presentation.qmd"</span>,</span>
+<span>                           package <span class="op">=</span> <span class="st">"typeR"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="va">simple_file</span>, delay <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="supported-quarto-formats">Supported Quarto Formats<a class="anchor" aria-label="anchor" href="#supported-quarto-formats"></a>
 </h2>
-<p>typeR works with various Quarto presentation formats:</p>
+<p><code>typeR</code> works with various Quarto presentation
+formats:</p>
 <div class="section level3">
 <h3 id="reveal-js-default">reveal.js (Default)<a class="anchor" aria-label="anchor" href="#reveal-js-default"></a>
 </h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span></code></pre></div>
 <p>Most popular format for HTML presentations. Supports themes,
 transitions, and interactive features.</p>
 </div>
 <div class="section level3">
 <h3 id="powerpoint">PowerPoint<a class="anchor" aria-label="anchor" href="#powerpoint"></a>
 </h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> pptx</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> pptx</span></span></code></pre></div>
 <p>While the typing effect works during development, the final
 PowerPoint won’t show animation.</p>
 </div>
 <div class="section level3">
 <h3 id="beamer-pdf">Beamer (PDF)<a class="anchor" aria-label="anchor" href="#beamer-pdf"></a>
 </h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> beamer</span></span></code></pre></div>
-<p>LaTeX-based PDF slides. typeRun() helps during development to test
-code.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> beamer</span></span></code></pre></div>
+<p>LaTeX-based PDF slides. <code><a href="../reference/typeRun.html">typeRun()</a></code> helps during
+development to test code.</p>
 </div>
 </div>
 <div class="section level2">
@@ -188,7 +196,7 @@ code.</p>
 <h3 id="adjust-typing-speed">1. Adjust Typing Speed<a class="anchor" aria-label="anchor" href="#adjust-typing-speed"></a>
 </h3>
 <p>For presentations, slower typing is often better:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Slower for readability</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"presentation.qmd"</span>, delay <span class="op">=</span> <span class="fl">0.10</span>, jitter <span class="op">=</span> <span class="fl">0.03</span><span class="op">)</span></span>
 <span></span>
@@ -202,7 +210,7 @@ code.</p>
 <h3 id="control-output-length">2. Control Output Length<a class="anchor" aria-label="anchor" href="#control-output-length"></a>
 </h3>
 <p>Prevent long outputs from scrolling off screen:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Limit to 5 lines</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"presentation.qmd"</span>, max_print <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span></span>
@@ -213,7 +221,7 @@ code.</p>
 <h3 id="use-interactive-pause">3. Use Interactive Pause<a class="anchor" aria-label="anchor" href="#use-interactive-pause"></a>
 </h3>
 <p>During live presentations, pause to answer questions:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"presentation.qmd"</span><span class="op">)</span></span>
 <span><span class="co"># Press ESC to pause</span></span>
 <span><span class="co"># Enter 1 to resume</span></span>
@@ -223,7 +231,7 @@ code.</p>
 <h3 id="test-before-presenting">4. Test Before Presenting<a class="anchor" aria-label="anchor" href="#test-before-presenting"></a>
 </h3>
 <p>Always do a full run-through before your actual presentation:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Full test run</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"my-talk.qmd"</span>, delay <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span></span>
 <span></span>
@@ -236,57 +244,53 @@ code.</p>
 <div class="section level3">
 <h3 id="step-1-create-content">Step 1: Create Content<a class="anchor" aria-label="anchor" href="#step-1-create-content"></a>
 </h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Data Analysis in R"</span></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> moon</span></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> slide</span></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">## Introduction</span></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="at">Today we'll analyze the mtcars dataset.</span></span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">## Load Data</span></span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a></span>
-<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a></span>
-<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="at">``` r</span></span>
-<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="at">data(mtcars)</span></span>
-<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a><span class="at">head(mtcars, 3)</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Data Analysis in R"</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> moon</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> slide</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">## Introduction</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="at">Today we'll analyze the mtcars dataset.</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="co">## Load Data</span></span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="co"># ```{r}</span></span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a><span class="co"># data(mtcars)</span></span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a><span class="co"># head(mtcars, 3)</span></span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a><span class="co"># ```</span></span>
+<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a><span class="co">## Summary Statistics</span></span>
+<span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a><span class="co"># ```{r}</span></span>
+<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a><span class="co"># summary(mtcars$mpg)</span></span>
+<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a><span class="co"># ```</span></span>
+<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" tabindex="-1"></a><span class="co">## Visualization</span></span>
+<span id="cb12-27"><a href="#cb12-27" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" tabindex="-1"></a><span class="co"># ```{r}</span></span>
+<span id="cb12-29"><a href="#cb12-29" tabindex="-1"></a><span class="co"># plot(mtcars$wt, mtcars$mpg,</span></span>
+<span id="cb12-30"><a href="#cb12-30" tabindex="-1"></a><span class="co">#      xlab = "Weight", ylab = "MPG",</span></span>
+<span id="cb12-31"><a href="#cb12-31" tabindex="-1"></a><span class="co">#      main = "Fuel Efficiency vs Weight")</span></span>
+<span id="cb12-32"><a href="#cb12-32" tabindex="-1"></a><span class="co"># ```</span></span>
+<span id="cb12-33"><a href="#cb12-33" tabindex="-1"></a></span>
+<span id="cb12-34"><a href="#cb12-34" tabindex="-1"></a><span class="co">## Model</span></span>
+<span id="cb12-35"><a href="#cb12-35" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="#cb12-36" tabindex="-1"></a><span class="co"># ```{r}</span></span>
+<span id="cb12-37"><a href="#cb12-37" tabindex="-1"></a><span class="co"># model &lt;- lm(mpg ~ wt, data = mtcars)</span></span>
+<span id="cb12-38"><a href="#cb12-38" tabindex="-1"></a><span class="co"># summary(model)</span></span>
+<span id="cb12-39"><a href="#cb12-39" tabindex="-1"></a><span class="co"># ```</span></span></code></pre></div>
 </div>
+<div class="section level3">
+<h3 id="step-2-practice">Step 2: Practice<a class="anchor" aria-label="anchor" href="#step-2-practice"></a>
+</h3>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Save the above as "data-analysis.qmd"</span></span>
+<span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"data-analysis.qmd"</span>, delay <span class="op">=</span> <span class="fl">0.06</span>, max_print <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="summary-statistics">Summary Statistics<a class="anchor" aria-label="anchor" href="#summary-statistics"></a>
-</h2>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">mpg</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="visualization">Visualization<a class="anchor" aria-label="anchor" href="#visualization"></a>
-</h2>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">wt</span>, <span class="va">mtcars</span><span class="op">$</span><span class="va">mpg</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">"Weight"</span>, ylab <span class="op">=</span> <span class="st">"MPG"</span>,</span>
-<span>     main <span class="op">=</span> <span class="st">"Fuel Efficiency vs Weight"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="model">Model<a class="anchor" aria-label="anchor" href="#model"></a>
-</h2>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="thank-you">Thank You!<a class="anchor" aria-label="anchor" href="#thank-you"></a>
-</h2>
-<pre><code>
-### Step 2: Practice
-
-
-``` r
-# Save the above as "data-analysis.qmd"
-typeRun("data-analysis.qmd", delay = 0.06, max_print = 8)</code></pre>
 <div class="section level3">
 <h3 id="step-3-present-live">Step 3: Present Live<a class="anchor" aria-label="anchor" href="#step-3-present-live"></a>
 </h3>
@@ -309,7 +313,7 @@ typeRun("data-analysis.qmd", delay = 0.06, max_print = 8)</code></pre>
 <h3 id="custom-environment">Custom Environment<a class="anchor" aria-label="anchor" href="#custom-environment"></a>
 </h3>
 <p>Keep your workspace clean by using a separate environment:</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Create isolated environment</span></span>
 <span><span class="va">demo_env</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">new.env</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -323,7 +327,7 @@ typeRun("data-analysis.qmd", delay = 0.06, max_print = 8)</code></pre>
 <div class="section level3">
 <h3 id="combining-multiple-presentations">Combining Multiple Presentations<a class="anchor" aria-label="anchor" href="#combining-multiple-presentations"></a>
 </h3>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run a series of short demos</span></span>
 <span><span class="va">demos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"intro.qmd"</span>, <span class="st">"advanced.qmd"</span>, <span class="st">"qa.qmd"</span><span class="op">)</span></span>
 <span></span>
@@ -378,7 +382,7 @@ sample()</li>
 <h3 id="issue-code-types-too-fast">Issue: Code types too fast<a class="anchor" aria-label="anchor" href="#issue-code-types-too-fast"></a>
 </h3>
 <p><strong>Solution:</strong> Increase the delay parameter</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"presentation.qmd"</span>, delay <span class="op">=</span> <span class="fl">0.12</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -386,7 +390,7 @@ sample()</li>
 </h3>
 <p><strong>Solution:</strong> Use max_print or modify your code to show
 less</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"presentation.qmd"</span>, max_print <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -399,7 +403,7 @@ less</p>
 </h3>
 <p><strong>Solution:</strong> Make sure your graphics device is open and
 functioning</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Test graphics device</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>  <span class="co"># Should work before starting typeRun</span></span></code></pre></div>
 </div>
@@ -410,7 +414,7 @@ functioning</p>
 <div class="section level3">
 <h3 id="teaching-a-course">Teaching a Course<a class="anchor" aria-label="anchor" href="#teaching-a-course"></a>
 </h3>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Week 1: Basics</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"week1-intro.qmd"</span>, delay <span class="op">=</span> <span class="fl">0.10</span><span class="op">)</span></span>
 <span></span>
@@ -423,7 +427,7 @@ functioning</p>
 <div class="section level3">
 <h3 id="conference-talk">Conference Talk<a class="anchor" aria-label="anchor" href="#conference-talk"></a>
 </h3>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># 20-minute presentation</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"conference-talk.qmd"</span>, </span>
 <span>        delay <span class="op">=</span> <span class="fl">0.06</span>,     <span class="co"># Fast enough to keep pace</span></span>
@@ -432,7 +436,7 @@ functioning</p>
 <div class="section level3">
 <h3 id="workshop">Workshop<a class="anchor" aria-label="anchor" href="#workshop"></a>
 </h3>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Interactive 2-hour workshop</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"workshop-morning.qmd"</span>,</span>
 <span>        delay <span class="op">=</span> <span class="fl">0.09</span>,      <span class="co"># Slower for learning</span></span>

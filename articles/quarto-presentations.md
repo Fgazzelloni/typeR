@@ -20,43 +20,48 @@ demonstrations for:
 
 ### 1. Create a Quarto Presentation
 
-First, create a Quarto presentation file with reveal.js format:
+First, create a Quarto presentation file with `reveal.js` format:
 
 ``` yaml
----
-title: "My R Demo"
-format: revealjs
----
+# ---
+# title: "My R Demo"
+# format: revealjs
+# ---
 
 ## Slide 1
 
-
-``` r
-x <- 1:10
-mean(x)
-```
+# ```{r}
+# x <- 1:10
+# mean(x)
+# ```
+# 
 
 ## Slide 2
 
-``` r
-plot(x, x^2)
+# ```{r}
+# plot(x, x^2)
+# ```
+# 
 ```
 
-    Save this as `my-demo.qmd`.
+Save this as `my-demo.qmd`.
 
-    ### 2. Run with typeRun()
+### 2. Run with typeRun()
 
+``` r
+# Basic usage
+typeRun("my-demo.qmd")
 
-    ``` r
-    # Basic usage
-    typeRun("my-demo.qmd")
+# With custom settings
+typeRun("my-demo.qmd", delay = 0.08, jitter = 0.02)
+```
 
-    # With custom settings
-    typeRun("my-demo.qmd", delay = 0.08, jitter = 0.02)
+**What happens:**
 
-**What happens:** - YAML header is skipped automatically - Slide
-dividers (`##`) are typed out - R code chunks execute in real-time -
-Narrative text types without executing
+- YAML header is skipped automatically
+- Slide dividers (`##`) are typed out
+- R code chunks execute in real-time
+- Narrative text types without executing
 
 ## Included Examples
 
@@ -70,13 +75,14 @@ demo_file <- system.file("examples/demo-presentation.qmd", package = "typeR")
 typeRun(demo_file)
 
 # Or the simpler version
-simple_file <- system.file("examples/simple-presentation.qmd", package = "typeR")
+simple_file <- system.file("examples/simple-presentation.qmd",
+                           package = "typeR")
 typeRun(simple_file, delay = 0.05)
 ```
 
 ## Supported Quarto Formats
 
-typeR works with various Quarto presentation formats:
+`typeR` works with various Quarto presentation formats:
 
 ### reveal.js (Default)
 
@@ -102,7 +108,9 @@ won’t show animation.
 format: beamer
 ```
 
-LaTeX-based PDF slides. typeRun() helps during development to test code.
+LaTeX-based PDF slides.
+[`typeRun()`](https://Fgazzelloni.github.io/typeR/reference/typeRun.md)
+helps during development to test code.
 
 ## Best Practices
 
@@ -174,41 +182,39 @@ Today we'll analyze the mtcars dataset.
 
 ## Load Data
 
-
-``` r
-data(mtcars)
-head(mtcars, 3)
-```
+# ```{r}
+# data(mtcars)
+# head(mtcars, 3)
+# ```
 
 ## Summary Statistics
 
-``` r
-summary(mtcars$mpg)
-```
+# ```{r}
+# summary(mtcars$mpg)
+# ```
 
 ## Visualization
 
-``` r
-plot(mtcars$wt, mtcars$mpg,
-     xlab = "Weight", ylab = "MPG",
-     main = "Fuel Efficiency vs Weight")
-```
+# ```{r}
+# plot(mtcars$wt, mtcars$mpg,
+#      xlab = "Weight", ylab = "MPG",
+#      main = "Fuel Efficiency vs Weight")
+# ```
 
 ## Model
 
-``` r
-model <- lm(mpg ~ wt, data = mtcars)
-summary(model)
+# ```{r}
+# model <- lm(mpg ~ wt, data = mtcars)
+# summary(model)
+# ```
 ```
 
-## Thank You!
+### Step 2: Practice
 
-    ### Step 2: Practice
-
-
-    ``` r
-    # Save the above as "data-analysis.qmd"
-    typeRun("data-analysis.qmd", delay = 0.06, max_print = 8)
+``` r
+# Save the above as "data-analysis.qmd"
+typeRun("data-analysis.qmd", delay = 0.06, max_print = 8)
+```
 
 ### Step 3: Present Live
 
