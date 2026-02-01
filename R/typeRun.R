@@ -58,24 +58,34 @@
 #' @seealso \code{\link{typeR}} for typing without evaluation
 #'
 #' @examples
-#' \dontrun{
-#' # Type and run a simple R script
-#' typeRun("analysis.R")
+#' # Create a temporary R script for demonstration
+#' tmp <- tempfile(fileext = ".R")
+#' writeLines(c(
+#'   "# Simple calculation",
+#'   "x <- 1:5",
+#'   "print(mean(x))",
+#'   "y <- x^2",
+#'   "print(sum(y))"
+#' ), tmp)
 #'
-#' # Type and run with slower, more dramatic effect
-#' typeRun("demo.R", delay = 0.1, jitter = 0.02)
+#' # Type and run with fast animation (for quick testing)
+#' \donttest{
+#'   typeRun(tmp, delay = 0.01, max_print = 5)
+#' }
 #'
-#' # Type and run a Quarto document with limited output
-#' typeRun("report.qmd", max_print = 5)
+#' # Clean up
+#' unlink(tmp)
 #'
-#' # Use a specific environment for evaluation
-#' my_env <- new.env()
-#' typeRun("script.R", envir = my_env)
-#' ls(my_env)  # See what was created
+#' # Interactive examples with real files
+#' if (interactive()) {
+#'   # Type and run a simple R script
+#'   typeRun("analysis.R")
 #'
-#' # Create a demo file and run it
-#' cat("# Simple Demo\nx <- 1:10\nmean(x)\nplot(x)\n", file = "demo.R")
-#' typeRun("demo.R")
+#'   # Type and run with slower, more dramatic effect
+#'   typeRun("demo.R", delay = 0.1, jitter = 0.02)
+#'
+#'   # Type and run a Quarto document with limited output
+#'   typeRun("report.qmd", max_print = 5)
 #' }
 #'
 #' @export
