@@ -24,7 +24,6 @@ presentations or educational demonstrations."><meta property="og:image" content=
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/typerun-demo.html">Live Code Execution</a></li>
-    <li><a class="dropdown-item" href="../articles/quarto-presentations.html">Quarto Presentations</a></li>
   </ul></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-news" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">News</button>
@@ -45,7 +44,7 @@ presentations or educational demonstrations."><meta property="og:image" content=
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Simulate Typing of an R Script File</h1>
-      <small class="dont-index">Source: <a href="https://github.com/Fgazzelloni/typeR/blob/master/R/typeR.R" class="external-link"><code>R/typeR.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/Fgazzelloni/typeR/blob/v0.2.0/R/typeR.R" class="external-link"><code>R/typeR.R</code></a></small>
       <div class="d-none name"><code>typeR.Rd</code></div>
     </div>
 
@@ -72,47 +71,11 @@ presentations or educational demonstrations.</p>
 <dd><p>The delay (in seconds) between typing each character (default: 0.05).</p></dd>
 
 </dl></div>
-    <div class="section level2">
-    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Invisibly returns NULL. Called for the side effect of displaying
-typed content in the console with animation.</p>
-    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Create a temporary R script for demonstration</span></span></span>
-<span class="r-in"><span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span>fileext <span class="op">=</span> <span class="st">".R"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html" class="external-link">writeLines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>  <span class="st">"# Example R script"</span>,</span></span>
-<span class="r-in"><span>  <span class="st">"x &lt;- 1:10"</span>,</span></span>
-<span class="r-in"><span>  <span class="st">"mean(x)"</span></span></span>
-<span class="r-in"><span><span class="op">)</span>, <span class="va">tmp</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Simulate typing the script (fast for testing)</span></span></span>
-<span class="r-in"><span><span class="fu">typeR</span><span class="op">(</span><span class="va">tmp</span>, delay <span class="op">=</span> <span class="fl">0.01</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> # Example R script</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> x &lt;- 1:10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mean(x)</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Clean up</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unlink.html" class="external-link">unlink</a></span><span class="op">(</span><span class="va">tmp</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Longer example with realistic typing speed</span></span></span>
-<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="va">tmp2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span>fileext <span class="op">=</span> <span class="st">".R"</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/writeLines.html" class="external-link">writeLines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    <span class="st">"# Data analysis example"</span>,</span></span>
-<span class="r-in"><span>    <span class="st">"data &lt;- mtcars"</span>,</span></span>
-<span class="r-in"><span>    <span class="st">"model &lt;- lm(mpg ~ wt, data = data)"</span>,</span></span>
-<span class="r-in"><span>    <span class="st">"summary(model)"</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span>, <span class="va">tmp2</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu">typeR</span><span class="op">(</span><span class="va">tmp2</span>, delay <span class="op">=</span> <span class="fl">0.08</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> # Data analysis example</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> data &lt;- mtcars</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> model &lt;- lm(mpg ~ wt, data = data)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> summary(model)</span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/unlink.html" class="external-link">unlink</a></span><span class="op">(</span><span class="va">tmp2</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Simulate typing of a script</span></span></span>
+<span class="r-in"><span><span class="co"># typeR("example_script.R", delay = 0.1)</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

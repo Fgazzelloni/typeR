@@ -2,6 +2,8 @@
 
 ## typeR 0.2.0
 
+CRAN release: 2026-02-04
+
 ### New Features
 
 - [`typeRun()`](https://Fgazzelloni.github.io/typeR/reference/typeRun.md) -
