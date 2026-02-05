@@ -1,20 +1,26 @@
 # typeR <a href='https://Fgazzelloni.github.io/typeR/'><img src='man/figures/logo.png' align="right" width="25%" min-width="120px" /></a>
 
+<!-- badges: start -->
 [![R-CMD-check](https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml)
 
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/typeR)](https://CRAN.R-project.org/package=typeR) -->
+
+[![CRAN status](https://www.r-pkg.org/badges/version/typeR)](https://CRAN.R-project.org/package=typeR)
+[![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/typeR)](https://CRAN.R-project.org/package=typeR)
+<!-- badges: end -->
 
 `typeR` is an R package that simulates typing effects on R script files, making it ideal for live coding presentations, interactive teaching, or creating animations. It supports **R scripts**, **R Markdown**, and **Quarto presentations** (including reveal.js slides).
 
 ## Installation
 
-To install the development version of `typeR` from GitHub, use:
-
 ```R
+# Install from CRAN
+install.packages("typeR")
+
+# Or get development version
+
 # Install devtools if you don't already have it
 install.packages("devtools")
 
-# Install typeR from GitHub
 devtools::install_github("Fgazzelloni/typeR")
 ```
 
