@@ -79,7 +79,9 @@ typeR("test_script.R", delay = 0.05)
 
 And here’s what the output looks like:
 
+<center>
 ![typeR demo](images/typeR_demo.gif){width="600px" height="400px"}
+</center>
 
 ## New in Version 0.2.0: typeRun()
 

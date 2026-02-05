@@ -51,6 +51,10 @@ typeRun("demo.R")
 - Each line executes as it's typed
 - Results appear immediately after each command
 
+<center>
+![typeR::typeRun demo](images/typeRun_demo.gif){width="600px" height="400px"}
+</center>
+
 ### Comparison: typeR vs typeRun
 
 ```{r comparison}
