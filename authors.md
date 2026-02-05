@@ -7,7 +7,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/Fgazzelloni/typeR/blob/v0.2.0/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/Fgazzelloni/typeR/blob/master/DESCRIPTION)
 
 Gazzelloni F (2026). *typeR: Simulate Typing Script*. R package version
 0.2.0, <https://Fgazzelloni.github.io/typeR/>.

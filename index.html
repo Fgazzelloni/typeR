@@ -45,6 +45,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="articles/typerun-demo.html">Live Code Execution</a></li>
+    <li><a class="dropdown-item" href="articles/quarto-presentations.html">Quarto Presentations</a></li>
   </ul>
 </li>
 <li class="nav-item dropdown">
@@ -76,23 +77,30 @@
 <a class="anchor" aria-label="anchor" href="#typer-"></a>
 </h1>
 </div>
-<p><a href="https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></p>
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/typeR)](https://CRAN.R-project.org/package=typeR) -->
-<p><code>typeR</code> is an R package that simulates typing effects on R script files, making it ideal for live coding presentations, interactive teaching, or creating animations.</p>
+<!-- badges: start -->
+
+<p><a href="https://CRAN.R-project.org/package=typeR" class="external-link"><img src="https://www.r-pkg.org/badges/version/typeR" alt="CRAN status"></a> <a href="https://CRAN.R-project.org/package=typeR" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/typeR" alt="CRAN downloads"></a> <!-- badges: end --></p>
+<p><code>typeR</code> is an R package that simulates typing effects on R script files, making it ideal for live coding presentations, interactive teaching, or creating animations. It supports <strong>R scripts</strong>, <strong>R Markdown</strong>, and <strong>Quarto presentations</strong> (including reveal.js slides).</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>To install the development version of <code>typeR</code> from GitHub, use:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Install devtools if you don't already have it</span></span>
+<code class="sourceCode R"><span><span class="co"># Install from CRAN</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"typeR"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Or get development version</span></span>
+<span></span>
+<span><span class="co"># Install devtools if you don't already have it</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Install typeR from GitHub</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"Fgazzelloni/typeR"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
+<div class="section level3">
+<h3 id="basic-r-scripts">Basic R Scripts<a class="anchor" aria-label="anchor" href="#basic-r-scripts"></a>
+</h3>
 <p>Here’s an example of how to use the <code>typeR</code> package:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://Fgazzelloni.github.io/typeR/">typeR</a></span><span class="op">)</span></span>
@@ -105,16 +113,46 @@
 <span>  <span class="st">"plot(x, y)"</span></span>
 <span><span class="op">)</span>, <span class="st">"test_script.R"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Simulate typing the script</span></span>
-<span><span class="fu"><a href="reference/typeR.html">typeR</a></span><span class="op">(</span><span class="st">"test_script.R"</span>, delay <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co"># Simulate typing the script (display only)</span></span>
+<span><span class="fu"><a href="reference/typeR.html">typeR</a></span><span class="op">(</span><span class="st">"test_script.R"</span>, delay <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Type AND execute the code</span></span>
+<span><span class="fu"><a href="reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"test_script.R"</span>, delay <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="quarto-presentations">Quarto Presentations<a class="anchor" aria-label="anchor" href="#quarto-presentations"></a>
+</h3>
+<p>Perfect for live coding in presentations! Works seamlessly with Quarto reveal.js slides:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Use the included example presentation</span></span>
+<span><span class="va">demo_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/demo-presentation.qmd"</span>, package <span class="op">=</span> <span class="st">"typeR"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="va">demo_file</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Or create your own Quarto presentation</span></span>
+<span><span class="fu"><a href="reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"my-presentation.qmd"</span>, delay <span class="op">=</span> <span class="fl">0.08</span>, max_print <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<p>See the <a href="https://fgazzelloni.github.io/typeR/articles/quarto-presentations.html" class="external-link">Quarto Presentations vignette</a> for detailed examples and best practices.</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
 </h2>
 <ul>
-<li>Simulates the typing of R script files line by line.</li>
-<li>Adjustable typing speed using the <code>delay</code> parameter.</li>
-<li>Creates engaging live coding demonstrations.</li>
+<li>
+<strong>Typing Animation</strong>: Simulates realistic typing of R code character by character</li>
+<li>
+<strong>Live Execution</strong>: <code><a href="reference/typeRun.html">typeRun()</a></code> executes code in real-time as it types</li>
+<li>
+<strong>Multiple Formats</strong>: Supports <code>.R</code>, <code>.Rmd</code>, and <code>.qmd</code> (Quarto) files</li>
+<li>
+<strong>Quarto Presentations</strong>: Perfect for reveal.js slides and other Quarto formats</li>
+<li>
+<strong>Interactive Control</strong>: Press ESC to pause, then resume or stop</li>
+<li>
+<strong>Smart Output</strong>: Handles plots, models, and long outputs intelligently</li>
+<li>
+<strong>Customizable Speed</strong>: Adjust <code>delay</code> and <code>jitter</code> for natural typing rhythm</li>
+<li>
+<strong>Teaching-Friendly</strong>: Ideal for courses, workshops, and conference presentations</li>
 </ul>
 </div>
 <div class="section level2">
@@ -160,7 +198,12 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/Fgazzelloni/typeR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
