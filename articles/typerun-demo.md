@@ -39,6 +39,10 @@ typeRun("demo.R")
 **What you’ll see:** - Code types out character by character - Each line
 executes as it’s typed - Results appear immediately after each command
 
+![typeR::typeRun demo](images/typeRun_demo.gif)
+
+typeR::typeRun demo
+
 ### Comparison: typeR vs typeRun
 
 ``` r
