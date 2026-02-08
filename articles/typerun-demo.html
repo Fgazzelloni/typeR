@@ -25,7 +25,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">typeR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,9 +113,12 @@ live execution:</p>
 <span></span>
 <span><span class="co"># Type and execute it</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"demo.R"</span><span class="op">)</span></span></code></pre></div>
-<p><strong>What you’ll see:</strong> - Code types out character by
-character - Each line executes as it’s typed - Results appear
-immediately after each command</p>
+<p><strong>What you’ll see:</strong></p>
+<ul>
+<li>Code types out character by character</li>
+<li>Each line executes as it’s typed</li>
+<li>Results appear immediately after each command</li>
+</ul>
 <center>
 <div class="float">
 <img src="images/typeRun_demo.gif" width="600" height="400" alt="typeR::typeRun demo"><div class="figcaption">typeR::typeRun demo</div>
@@ -147,9 +150,13 @@ immediately after each command</p>
 <span></span>
 <span><span class="co"># Faster typing for quick demos</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"demo.R"</span>, delay <span class="op">=</span> <span class="fl">0.02</span>, jitter <span class="op">=</span> <span class="fl">0.005</span><span class="op">)</span></span></code></pre></div>
-<p><strong>Parameters:</strong> - <code>delay</code>: Base time between
-characters (seconds) - <code>jitter</code>: Random variation for natural
-feel</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<code>delay</code>: Base time between characters (seconds)</li>
+<li>
+<code>jitter</code>: Random variation for natural feel</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="limit-output-length">Limit Output Length<a class="anchor" aria-label="anchor" href="#limit-output-length"></a>
@@ -264,8 +271,12 @@ mean of x
 <span><span class="co"># Press ESC while running</span></span>
 <span><span class="co"># Enter 1 to resume</span></span>
 <span><span class="co"># Or enter 2 to stop</span></span></code></pre></div>
-<p>This is perfect for: - Answering questions during presentations -
-Explaining specific code sections - Debugging during demonstrations</p>
+<p>This is perfect for:</p>
+<ul>
+<li>Answering questions during presentations</li>
+<li>Explaining specific code sections</li>
+<li>Debugging during demonstrations</li>
+</ul>
 </div>
 </div>
 <div class="section level2">
@@ -279,9 +290,13 @@ files:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Create an R Markdown example</span></span>
 <span><span class="fu"><a href="../reference/typeRun.html">typeRun</a></span><span class="op">(</span><span class="st">"report.Rmd"</span><span class="op">)</span></span></code></pre></div>
-<p><strong>Behavior:</strong> - ✅ Types and shows all text - ✅
-Executes only R code chunks - ✅ Skips YAML headers - ✅ Preserves
-narrative flow</p>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>✅ Types and shows all text</li>
+<li>✅ Executes only R code chunks</li>
+<li>✅ Skips YAML headers</li>
+<li>✅ Preserves narrative flow</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="quarto-documents">Quarto Documents<a class="anchor" aria-label="anchor" href="#quarto-documents"></a>

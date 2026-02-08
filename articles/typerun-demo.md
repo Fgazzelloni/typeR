@@ -36,8 +36,11 @@ sum(x)
 typeRun("demo.R")
 ```
 
-**What you’ll see:** - Code types out character by character - Each line
-executes as it’s typed - Results appear immediately after each command
+**What you’ll see:**
+
+- Code types out character by character
+- Each line executes as it’s typed
+- Results appear immediately after each command
 
 ![typeR::typeRun demo](images/typeRun_demo.gif)
 
@@ -67,8 +70,10 @@ typeRun("demo.R", delay = 0.1, jitter = 0.02)
 typeRun("demo.R", delay = 0.02, jitter = 0.005)
 ```
 
-**Parameters:** - `delay`: Base time between characters (seconds) -
-`jitter`: Random variation for natural feel
+**Parameters:**
+
+- `delay`: Base time between characters (seconds)
+- `jitter`: Random variation for natural feel
 
 ### Limit Output Length
 
@@ -184,8 +189,11 @@ typeRun("long_script.R")
 # Or enter 2 to stop
 ```
 
-This is perfect for: - Answering questions during presentations -
-Explaining specific code sections - Debugging during demonstrations
+This is perfect for:
+
+- Answering questions during presentations
+- Explaining specific code sections
+- Debugging during demonstrations
 
 ## Working with R Markdown and Quarto
 
@@ -199,8 +207,12 @@ intelligently handles `.Rmd` files:
 typeRun("report.Rmd")
 ```
 
-**Behavior:** - ✅ Types and shows all text - ✅ Executes only R code
-chunks - ✅ Skips YAML headers - ✅ Preserves narrative flow
+**Behavior:**
+
+- ✅ Types and shows all text
+- ✅ Executes only R code chunks
+- ✅ Skips YAML headers
+- ✅ Preserves narrative flow
 
 ### Quarto Documents
 
