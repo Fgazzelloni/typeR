@@ -103,9 +103,11 @@ summary(model)
 typeRun("model_demo.R")
 ```
 
-**What happens:** - `model <- lm(...)` executes silently (no output) -
-`summary(model)` displays the full summary with coefficients, R-squared,
-etc.
+**What happens:**
+
+- `model <- lm(...)` executes silently (no output)
+- `summary(model)` displays the full summary with coefficients,
+  R-squared, etc.
 
 ### GLM and Other Models
 
@@ -125,6 +127,44 @@ summary(pois_model)
 
 typeRun("glm_demo.R")
 ```
+
+### Statistical Tests
+
+The
+[`typeRun()`](https://Fgazzelloni.github.io/typeR/reference/typeRun.md)
+function properly displays statistical test results using their
+formatted print methods:
+
+``` r
+library(typeR)
+
+# Create a test script
+cat('x <- rnorm(50, mean = 20, sd = 3)
+tt <- t.test(x, alternative = "two.sided", conf.level = 0.95)
+tt
+', file = "test_ttest.R")
+
+# Run it
+typeRun("test_ttest.R", delay = 0.01)
+```
+
+This will display the t-test results in their proper formatted output:
+
+        One Sample t-test
+
+    data:  x
+    t = 45.185, df = 49, p-value < 2.2e-16
+    alternative hypothesis: true mean is not equal to 0
+    95 percent confidence interval:
+     18.68753 20.42711
+    sample estimates:
+    mean of x 
+     19.55732
+
+The same applies to other statistical objects like
+[`anova()`](https://rdrr.io/r/stats/anova.html),
+[`aov()`](https://rdrr.io/r/stats/aov.html),
+[`lm()`](https://rdrr.io/r/stats/lm.html), etc.
 
 ## Interactive Control
 
@@ -445,5 +485,3 @@ typeRun("demo.R")
 - [Package website](https://Fgazzelloni.github.io/typeR/)
 
 ------------------------------------------------------------------------
-
-## Cleanup
