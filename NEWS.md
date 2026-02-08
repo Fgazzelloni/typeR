@@ -1,4 +1,18 @@
+# typeR 0.2.1
+
+## Bug fixes
+
+* Fixed print method for statistical test objects (htest, anova, etc.) to display formatted output instead of raw list structure when using `typeRun()`
+
+## Documentation
+
+* Added vignette example demonstrating statistical test display
+
+---
+
 # typeR 0.2.0
+
+[Your previous 0.2.0 changes here...]
 
 ## New Features
 

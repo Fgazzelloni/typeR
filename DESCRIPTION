@@ -1,6 +1,6 @@
 Package: typeR
 Title: Simulate Typing Script
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: 
     person("Federica", "Gazzelloni", , "fede.gazzelloni@gmail.com", role = c("aut", "cre"))
 Description: Simulates typing of R script files for presentations and demonstrations.

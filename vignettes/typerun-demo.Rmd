@@ -47,6 +47,7 @@ typeRun("demo.R")
 ```
 
 **What you'll see:**
+
 - Code types out character by character
 - Each line executes as it's typed
 - Results appear immediately after each command
@@ -81,6 +82,7 @@ typeRun("demo.R", delay = 0.02, jitter = 0.005)
 ```
 
 **Parameters:**
+
 - `delay`: Base time between characters (seconds)
 - `jitter`: Random variation for natural feel
 
@@ -194,11 +196,10 @@ typeRun("long_script.R")
 ```
 
 This is perfect for:
+
 - Answering questions during presentations
 - Explaining specific code sections
 - Debugging during demonstrations
-
-
 
 ## Working with R Markdown and Quarto
 
@@ -212,6 +213,7 @@ typeRun("report.Rmd")
 ```
 
 **Behavior:**
+
 - ✅ Types and shows all text
 - ✅ Executes only R code chunks
 - ✅ Skips YAML headers
@@ -224,8 +226,6 @@ Works identically with `.qmd` files:
 ```{r qmd, eval=FALSE}
 typeRun("analysis.qmd")
 ```
-
-
 
 ## Advanced Features
 
@@ -400,6 +400,7 @@ typeRun("glm_example.R", max_print = 6)
 ### 1. Prepare Your Script
 
 Before presenting:
+
 ```r
 # Test your script normally first
 source("demo.R")
