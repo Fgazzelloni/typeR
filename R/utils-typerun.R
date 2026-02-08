@@ -48,9 +48,15 @@
     if (length(val) > max_print)
       return(trunc_msg(sprintf("...  [%d elements truncated]", length(val))))
   } else if (is.list(val) && length(val) > 0) {
+    # If it's a list with a class attribute (S3 object), use its print method
+    if (!is.null(attr(val, "class"))) {
+      print(val)
+    } else {
+      # Plain list without class - truncate it
     print(utils::head(val, max_print))
     if (length(val) > max_print)
       return(trunc_msg(sprintf("... [%d items truncated]", length(val))))
+    }
   } else {
     print(val)
   }
